@@ -14,12 +14,20 @@ def get_pokemon_info(name):
 
     
 
-pokemon_name = "typhlosion"
 
-pokemon_info = get_pokemon_info(pokemon_name)
+while True:
+    pokemon_name = input("Enter the name of the Pokémon (or 'exit' to quit): ").lower()
 
-if pokemon_info:
-    print(f"Name: {pokemon_info['name'].capitalize()}")
-    print(f"ID: {pokemon_info['id']}")
-    print(f"Height: {pokemon_info['height']}")
-    print(f"Weight: {pokemon_info['weight']}")
+    if pokemon_name.lower() == 'exit':
+        print("Goodbye!")
+        break
+
+    pokemon_info = get_pokemon_info(pokemon_name)
+
+    if pokemon_info:
+        print(f"Name: {pokemon_info['name'].capitalize()}")
+        print(f"ID: {pokemon_info['id']}")
+        print(f"Height: {pokemon_info['height']}")
+        print(f"Weight: {pokemon_info['weight']}")
+    else:
+        print("Pokémon not found. Please try again.")
